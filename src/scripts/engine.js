@@ -79,7 +79,7 @@ async function createCardImage(IdCard, fieldSide) {
 }
 
 async function setCardsField(cardId) {
-    // remove todas as cartas antes
+    
     await removeAllCardsImages();
 
     let computerCardId = await getRandomCardId();
@@ -134,13 +134,13 @@ async function checkDuelResults(playerCardId, computerCardId){
 
     if(playerCard.WinOf.includes(computerCardId)){
         duelResults = "win";
-        // await playAudio(duelResults);
+       
         state.score.playerScore++;
     }
 
     if(playerCard.LoseOf.includes(computerCardId)){
         duelResults = "lose";
-        // await playAudio(duelResults);
+        
         state.score.computerScore++;
     }
     await playAudio(duelResults);
